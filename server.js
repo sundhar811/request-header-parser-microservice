@@ -26,7 +26,6 @@ app.get("/api/hello", function (req, res) {
 
 // request header parser microservice
 app.get('/api/whoami', (req, res) => {
-  console.log(req.headers)
   let { 'x-forwarded-for': ips, 'accept-language': language, 'user-agent': user } = req.headers;
   let ip = ips.split(',')[0];
   res.send({ ipaddress: ip, 'language': language, 'software': user });
